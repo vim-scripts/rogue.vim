@@ -1,0 +1,13 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=5017
+
+This Vim plugin is a game that is porting of Rogue-clone II.
+You can enjoy the game on your Vim.
+
+Execute `:Rogue` to start the game.
+
+You can get the latest version from here.
+https://github.com/katono/rogue.vim
+
+Screenshot:
+https://raw.github.com/wiki/katono/rogue.vim/image/rogue_vim.png
+
