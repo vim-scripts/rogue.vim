@@ -196,6 +196,10 @@ end
 
 local function aim_monster(monster)
 	local rn = g.get_room_number(monster.row, monster.col)
+	if rn == g.NO_ROOM then
+		-- fixed original bug: access rooms[-1]
+		return
+	end
 	local r = g.get_rand(0, 12)
 
 	for i = 0, 3 do
@@ -573,7 +577,7 @@ function g.move_mon_to(monster, row, col)
 	end
 	if g.dungeon[row][col][g.DOOR] and
 		g.get_room_number(row, col) ~= g.cur_room and
-		g.dungeon[mrow][mcol][g.FLOOR] and g.blind == 0 then
+		g.dungeon_equals(g.dungeon[mrow][mcol], g.FLOOR) and g.blind == 0 then
 		g.mvaddch(mrow, mcol, ' ')
 	end
 	if g.dungeon[row][col][g.DOOR] then
